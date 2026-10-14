@@ -1,0 +1,151 @@
+{
+  "data": {
+    "clean_transactions": 776579,
+    "customers": 5852,
+    "invoices": 36594,
+    "products": 4620,
+    "period_start": "2009-12-01",
+    "period_end": "2011-12-09",
+    "snapshot_date": "2011-12-10",
+    "total_revenue_gbp": 17068582.72
+  },
+  "features": {
+    "used": [
+      "Recency",
+      "Frequency",
+      "Monetary",
+      "AvgOrderValue",
+      "DistinctProducts",
+      "TenureDays"
+    ],
+    "log_transformed": [
+      "Frequency",
+      "Monetary",
+      "AvgOrderValue",
+      "DistinctProducts"
+    ],
+    "skewness_before_after_log": {
+      "Recency": {
+        "before": 0.89,
+        "after": 0.89
+      },
+      "Frequency": {
+        "before": 12.04,
+        "after": 1.0
+      },
+      "Monetary": {
+        "before": 25.33,
+        "after": 0.27
+      },
+      "AvgOrderValue": {
+        "before": 53.38,
+        "after": 0.06
+      },
+      "DistinctProducts": {
+        "before": 6.22,
+        "after": -0.26
+      },
+      "TenureDays": {
+        "before": -0.62,
+        "after": -0.62
+      }
+    },
+    "scaling": "StandardScaler (zero mean, unit variance)"
+  },
+  "k_selection": {
+    "k_range": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "inertia": [
+      22350.1,
+      17454.9,
+      15013.2,
+      13216.2,
+      11919.1,
+      11117.6,
+      10355.1,
+      9835.6,
+      9301.2
+    ],
+    "silhouette": [
+      0.315,
+      0.308,
+      0.254,
+      0.242,
+      0.233,
+      0.22,
+      0.223,
+      0.217,
+      0.223
+    ],
+    "elbow_k": 5,
+    "best_silhouette_k": 2,
+    "chosen_k": 5,
+    "rule": "elbow (max distance below endpoint chord), silhouette must be >= 0.2"
+  },
+  "kmeans": {
+    "silhouette": 0.242,
+    "davies_bouldin": 1.257,
+    "calinski_harabasz": 2421.8,
+    "stability_ari_min_across_seeds": 0.968
+  },
+  "gaussian_mixture": {
+    "silhouette": 0.085,
+    "davies_bouldin": 2.604,
+    "calinski_harabasz": 1163.5,
+    "bic": -34769.9,
+    "adjusted_rand_index_vs_kmeans": 0.26,
+    "cluster_sizes": [
+      1618,
+      1300,
+      1172,
+      943,
+      819
+    ]
+  },
+  "pca_explained_variance": [
+    0.546,
+    0.215
+  ],
+  "revenue_concentration": {
+    "top_1pct_customers_revenue_share": 32.0,
+    "top_10pct_customers_revenue_share": 63.9,
+    "top_20pct_customers_revenue_share": 77.2
+  },
+  "segments": {
+    "Champions": {
+      "customers": 1039,
+      "pct_customers": 17.8,
+      "pct_revenue": 73.5
+    },
+    "Loyal Customers": {
+      "customers": 1608,
+      "pct_customers": 27.5,
+      "pct_revenue": 15.1
+    },
+    "New Customers": {
+      "customers": 1264,
+      "pct_customers": 21.6,
+      "pct_revenue": 5.4
+    },
+    "Lapsed Customers": {
+      "customers": 1172,
+      "pct_customers": 20.0,
+      "pct_revenue": 5.3
+    },
+    "Lost Customers": {
+      "customers": 769,
+      "pct_customers": 13.1,
+      "pct_revenue": 0.8
+    }
+  },
+  "random_seed": 42
+}
